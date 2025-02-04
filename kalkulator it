@@ -1,0 +1,32 @@
+print("Kalkulator IMT Sederhana")
+print("==========================")
+
+# Meminta input dari pengguna
+bb = float(input("Masukkan berat badan Anda: "))
+tb = float(input("Masukkan tinggi badan Anda: "))
+
+# Pastikan tb tidak nol
+if tb == 0:
+    print("Error: Tinggi badan Anda tidak valid!")
+    exit()
+
+# menghitung bb dan tb
+hitung = float(bb / (tb * tb))
+
+# prepare imt
+if hitung < 17.0:
+    hasil = "Kurus, kekurangan berat badan berat"
+elif 17.0 <= hitung <= 18.5:
+    hasil = "Kurus, Kekurangan berat badan ringan"
+elif 18.5 <= hitung <= 25.0:
+    hasil = "Normal"
+elif 25.1 <= hitung <= 27.0:
+    hasil = "Gemuk, kelebihan berat badan tingkat ringan"
+elif hitung > 27.0:
+    hasil = "Gemuk, kelebihan berat badan tingkat berat"
+else:
+    hasil = "Hasil tidak valid! Cek kembali berat dan tinggi badan Anda."
+
+# Tampilkan Hasil
+print(f"BMI anda adalah {hitung:2f}")
+print(f"Kategori: {hasil}")
